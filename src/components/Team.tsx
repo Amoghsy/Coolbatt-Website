@@ -1,13 +1,14 @@
 import React from 'react';
 import { Github, Linkedin, Twitter, Code, Palette,}from 'lucide-react';
+import Profileicon from "../assets/profile.png";
 
 const Team: React.FC = () => {
   const teamMembers = [
     {
-      name: "Sarthak Updayay",
+      name: "Sarthak Upadayay",
       role: "React Developer",
  
-      image: "/src/assets/profile.png",
+      image: Profileicon,
       icon: Code,
       social: {
         github: "#",
@@ -18,7 +19,7 @@ const Team: React.FC = () => {
     {
       name: "Arpita Gouda",
       role: "UI/UX Designer",
-      image: "/src/assets/profile.png",
+       image: Profileicon,
       icon: Palette,
       social: {
         github: "#",
@@ -29,7 +30,7 @@ const Team: React.FC = () => {
     {
       name: "Amogh S Y",
       role: " Android Developer",
-      image: "/src/assets/profile.png",
+       image: Profileicon,
       icon: Code,
       social: {
         github: "#",

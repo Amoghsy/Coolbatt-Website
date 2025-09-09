@@ -1,4 +1,7 @@
 import React from "react";
+import Dashboard from "../assets/screenshots/DashboardShot.png";
+import Stats from "../assets/screenshots/StatsShot.png";
+import Notify from "../assets/screenshots/NotifyShot.png";
 
 
 const Screenshots: React.FC = () => {
@@ -6,17 +9,17 @@ const Screenshots: React.FC = () => {
     {
       title: "Dashboard",
       description: "Resource Management",
-      image: "src/assets/screenshots/DashboardShot.png",
+      image: Dashboard,
     },
     {
       title: "Battery & Thermal Monitoring",
       description: "Detailed battery analytics",
-      image:"src/assets/screenshots/StatsShot.png",
+      image:Stats,
     },
     {
       title: "Notification System",
       description: "Instant Notifications for critical call events",
-      image: "src/assets/screenshots/NotifyShot.png",
+      image: Notify,
     },
   ];
 
