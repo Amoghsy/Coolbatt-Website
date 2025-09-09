@@ -1,5 +1,6 @@
 import React from 'react';
 import { Github, Twitter, Mail, Download, } from 'lucide-react';
+import AppIcon from "../assets/icon.png"; 
 
 const Footer: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ const Footer: React.FC = () => {
             <h3 className="text-2xl font-bold mb-4">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-cyan-500 rounded-lg flex items-center justify-center">
-                  <img src="/src/assets/icon.png"  alt="App Logo" className="w-12 h-12 md:w-12 md:h-12"/>
+                  <img src={AppIcon} alt="App Logo" className="w-12 h-12 md:w-12 md:h-12"/>
                 </div>
                 <div>
                   <span className="text-white">Cool</span>

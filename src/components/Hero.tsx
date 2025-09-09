@@ -1,5 +1,6 @@
 import React from 'react';
 import { Battery, Shield, Zap, Smartphone } from 'lucide-react';
+import AppIcon from "../assets/icon.png"; 
 
 const Hero: React.FC = () => {
   return (
@@ -25,7 +26,7 @@ const Hero: React.FC = () => {
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
           <div className="flex items-center justify-center mb-4">
             <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-green-400 to-cyan-500 rounded-2xl flex items-center justify-center shadow-2xl">
-              <img src="/src/assets/icon.png"  alt="App Logo" className="w-30 h-30 md:w-30 md:h-30"
+              <img src={AppIcon} alt="App Logo" className="w-30 h-30 md:w-30 md:h-30"
 />
             </div>
           </div>
