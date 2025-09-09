@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables */
+:root {
+  --ai-green: #4CAF50;
+  --ai-green-dark: #388E3C;
+  --ai-green-light: #66BB6A;
+
+  --ai-blue: #2196F3;
+  --ai-blue-dark: #1565C0;
+  --ai-blue-light: #64B5F6;
+
+  --ai-cyan: #00BCD4;
+  --ai-cyan-dark: #0097A7;
+  --ai-cyan-light: #26C6DA;
+
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.12);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--ai-green), var(--ai-blue));
+  --gradient-blue-green: linear-gradient(135deg, var(--ai-cyan), var(--ai-green));
+  --gradient-cyan: linear-gradient(135deg, var(--ai-cyan), var(--ai-blue-light));
+  --gradient-glass: linear-gradient(135deg, rgba(76, 175, 80, 0.12), rgba(33, 150, 243, 0.08));
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at top left, #033859, transparent 70%),
+              radial-gradient(circle at bottom right, #021526, transparent 70%),
+              #022232ff;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated gradient overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(33, 150, 243, 0.08), rgba(76, 175, 80, 0.08));
+  mix-blend-mode: overlay;
+  animation: gradientShift 12s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes gradientShift {
+  from { transform: translateX(-10%) translateY(-10%); }
+  to   { transform: translateX(10%) translateY(10%); }
+}
+
+/* Star-like particle layer */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.05;
+  animation: twinkle 6s linear infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.03; }
+  to   { opacity: 0.08; }
+}
+
+/* Button Styles */
+[btn] {
+  @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 cursor-pointer border-none outline-none;
+  display: inline-block;
+  text-decoration: none;
+}
+
+[btn="blue"] {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.35);
+}
+
+[btn="blue"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(33, 150, 243, 0.45);
+}
+
+[btn="glass"] {
+  background: var(--glass-bg);
+  color: var(--ai-green);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+}
+
+[btn="glass"]:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--ai-green);
+}
+
+/* Glass Effects */
+[glass] {
+  background: var(--glass-bg);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+}
+
+[glass="card"] {
+  background: var(--gradient-glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+[glass="card"]:hover {
+  border-color: var(--ai-green);
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.35),
+              0 0 40px rgba(33, 150, 243, 0.25);
+}
+
+/* Gradient Text */
+[text="gradient"] {
+  background: linear-gradient(135deg, var(--ai-green), var(--ai-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Typography */
+[text="ai-green"] { color: var(--ai-green); }
+[text="ai-blue"] { color: var(--ai-blue); }
+
+/* ========================= */
+/*   Contact Form Styling    */
+/* ========================= */
+[form-input],
+[form-textarea] {
+  @apply w-full px-4 py-3 rounded-lg transition-all duration-300;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: #fff;
+  font-size: 1rem;
+  backdrop-filter: blur(10px);
+  outline: none;
+}
+
+[form-input]::placeholder,
+[form-textarea]::placeholder {
+  color: #a0aec0;
+}
+
+[form-input]:focus,
+[form-textarea]:focus {
+  border-image: var(--gradient-primary) 1;
+  border-width: 2px;
+  border-style: solid;
+  box-shadow: 0 0 12px rgba(76, 175, 80, 0.35),
+              0 0 20px rgba(33, 150, 243, 0.25);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+[form-textarea] {
+  min-height: 120px;
+  resize: none;
+}
+
+/* Submit Button Glow */
+[btn="submit"] {
+  background: var(--gradient-blue-green);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.35);
+}
+
+[btn="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 188, 212, 0.45),
+              0 0 20px rgba(76, 175, 80, 0.35);
+}
