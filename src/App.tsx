@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import Features from './components/Features';
 import Screenshots from './components/Screenshots';
 import Team from './components/Team';
+import VideoPreview from "./components/VideoPreview";
 import Waitlist from './components/Waitlist';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -40,6 +41,7 @@ function App() {
       <Hero />
       <Features />
       <Screenshots />
+      <VideoPreview />
       <Team />
       <Waitlist />
       <Contact />
