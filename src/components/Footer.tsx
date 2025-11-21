@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
             <h4 text="ai-blue" className="font-bold mb-4">Download</h4>
             <div className="space-y-3">
               {/* @ts-ignore */}
-              <a href="#waitlist" btn="blue" hover-5 className="flex items-center gap-2 text-sm">
+              <a href="https://drive.google.com/file/d/180apx1Y6MtT4oFvsVNl15mYEafUP6mjA/view?usp=sharing" btn="blue" hover-5 className="flex items-center gap-2 text-sm">
                 <Download className="w-4 h-4" />
                 Download Preview APK
               </a>
