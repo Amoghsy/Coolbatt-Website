@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="pt-8 border-t border-gray-800 text-center text-gray-400">
-          <p>&copy; 2025 Coolbatt. All rights reserved. Built with advanced Android optimization technology.</p>
+          <p>&copy; {new Date().getFullYear()} Coolbatt. All rights reserved. Built with advanced Android optimization technology.</p>
         </div>
       </div>
     </footer>
